@@ -10,6 +10,10 @@
           <i class="el-icon-s-management"></i>
           <span slot="title">课程信息管理</span>
         </el-menu-item>
+        <el-menu-item index="/stu/viewLesson">
+          <i class="el-icon-menu"></i>
+          <span slot="title">选课信息管理</span>
+        </el-menu-item>
       </el-menu>
     </el-col>
   </el-row>

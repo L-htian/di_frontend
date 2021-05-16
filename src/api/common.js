@@ -16,5 +16,5 @@ export function validate(form) {
     //         re = (JSON.parse(data)).content
     //     }
     // })
-    return 2
+    return 1
 }

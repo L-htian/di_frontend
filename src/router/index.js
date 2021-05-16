@@ -10,6 +10,7 @@ import admPersonalInfo from "@/views/adm/admPersonalInfo";
 import countView from "@/views/adm/countView";
 import countLesson from "@/views/adm/countLesson";
 import countStu from "@/views/adm/countStu";
+import viewStuLesson from "@/views/stu/viewStuLesson";
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes = [
                 path: 'personalInfo',
                 name: 'personalInfo',
                 component: personalInfo
+            },
+            {
+                path: 'viewLesson',
+                name: 'viewLesson',
+                component: viewStuLesson
             }
         ]
     },

@@ -61,3 +61,31 @@ export function chooseStuLesson(chooseInfo) {
     })
     return re
 }
+
+export function getChoosedLesson(stuId){
+    let re
+    $.ajax(`${api.stu}/getChoosedLesson/${stuId}`,{
+        type: 'GET',
+        data: {},
+        dataType: 'text',
+        async: false,
+        success: function (data) {
+            re = (JSON.parse(data)).content
+        }
+    })
+    return re
+}
+
+export function dropLesson(lessonInfo){
+    let re
+    $.ajax(`${api.stu}/dropLesson`, {
+        type: "POST",
+        data: JSON.stringify(lessonInfo),
+        contentType: 'application/json',
+        async: false,
+        success: function (data) {
+            re = (JSON.parse(data)).content
+        }
+    })
+    return re
+}

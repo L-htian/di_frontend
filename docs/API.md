@@ -198,5 +198,58 @@ const api = {
   }
   ```
 
+- 获得学生的选课信息（GET）
+
+  ```js
+  `${api.stu}/getChoosedLesson/${stuId}`
+  ```
+
+  根据学生学号获得该生的选课信息，需要返回课程编号，课程名称，学分，授课老师，授课地点，是否共享等信息，一个json对象的集合，属性定义如下：
+
+  ```js
+  [
+  		{
+            lesson_id: '12354',
+            lesson_name: '数据集成',
+            lesson_point: '2',
+            teachers: '刘峰',
+            classroom: '教学楼202',
+            isShared: '否'
+          }
+  ]
+  ```
+
+- 退课（POST）
+
+  ```js
+  `${api.stu}/dropLesson`
+  ```
+
+  通过传回的由课程编号与学生学号组成的json对象进行删除，并返回退课之后该学生的课表
+
+  传给后端的属性定义为
+
+  ```js
+  {
+            "lesson_id":id,
+            "student_id":this.stu_id
+  }
+  ```
+
+  需要传回前端的属性定义为
+
+  ```js
+  [
+  		{
+            lesson_id: '12354',
+            lesson_name: '数据集成',
+            lesson_point: '2',
+            teachers: '刘峰',
+            classroom: '教学楼202',
+            isShared: '否'
+          }
+  ]
+  ```
+
   
 
