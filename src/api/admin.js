@@ -58,3 +58,20 @@ export function changeAdmPassword(accountInfo) {
     })
     return re
 }
+
+
+
+export function updateAdmLesson(lessonInfo){
+    let re = 0
+    $.ajax(`${api.adm}/updateAdmLesson`,{
+        type:'POST',
+        data:JSON.stringify(lessonInfo),
+        contentType:'application/json',
+        async:false,
+        success:function (data){
+            console.log("updateSuccess!")
+            re = 1
+        }
+    })
+    return re
+}

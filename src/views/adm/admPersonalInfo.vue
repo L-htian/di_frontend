@@ -32,6 +32,7 @@ export default {
   },
   data() {
     return {
+      labelPosition:'right',
       admin_Info: {
         name: '',
         sex: '',
