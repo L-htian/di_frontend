@@ -138,6 +138,12 @@ export default {
           this.lessonData[i].isShared = this.lessonToModify.isShared
         }
       }
+      // if(updateAdmLesson(this.lessonData)){
+      //   this.$message({
+      //     type: 'success',
+      //     message: '修改成功'
+      //   })
+      // }
       this.makeModifyEmpty()
       this.modifyLessonVisible = false
     },

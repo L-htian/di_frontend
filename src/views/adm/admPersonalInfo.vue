@@ -20,7 +20,7 @@
 
 <script>
 import {mapGetters, mapMutations, mapActions} from 'vuex'
-import {getAdmInfo} from "@/api/admin";
+import {changeAdmPassword, getAdmInfo} from "@/api/admin";
 
 export default {
   name: "admPersonalInfo",

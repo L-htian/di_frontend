@@ -48,7 +48,7 @@
 
 <script>
 import {mapGetters} from 'vuex'
-import {getStuLessonInfo} from "@/api/stu";
+import {chooseStuLesson, getStuLessonInfo} from "@/api/stu";
 
 export default {
   name: "lessonManage",
