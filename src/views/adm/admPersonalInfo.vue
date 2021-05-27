@@ -49,7 +49,7 @@ export default {
         account: '181250000',
         password: '123456'
       }
-      // this.admin_Info = getAdmInfo(this.login_account)
+      this.admin_Info = getAdmInfo(this.login_account)
     },
     changePassword() {
       let re = {
@@ -57,12 +57,12 @@ export default {
         "password": this.admin_Info.password
       }
       console.log(re)
-      // if(changeAdmPassword(re)){
-      //   this.$notify({
-      //     title: '修改成功',
-      //     type: 'success'
-      //   });
-      // }
+      if(changeAdmPassword(re)){
+        this.$notify({
+          title: '修改成功',
+          type: 'success'
+        });
+      }
 
     }
   }

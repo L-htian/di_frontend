@@ -77,7 +77,7 @@ export default {
           "lesson_id":id,
           "student_id":this.stu_id
         }
-        // this.lessonData = dropLesson(re)
+        this.lessonData = dropLesson(re)
       }).catch(() => {
         this.$message({
           type: 'info',
@@ -96,7 +96,7 @@ export default {
           isShared: '否'
         })
       }
-      // this.lessonData = getChoosedLesson(this.stu_id)
+      this.lessonData = getChoosedLesson(this.stu_id)
     }
   },
   computed: {

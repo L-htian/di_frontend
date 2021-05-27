@@ -138,12 +138,12 @@ export default {
           this.lessonData[i].isShared = this.lessonToModify.isShared
         }
       }
-      // if(updateAdmLesson(this.lessonData)){
-      //   this.$message({
-      //     type: 'success',
-      //     message: '修改成功'
-      //   })
-      // }
+      if(updateAdmLesson(this.lessonData)){
+        this.$message({
+          type: 'success',
+          message: '修改成功'
+        })
+      }
       this.makeModifyEmpty()
       this.modifyLessonVisible = false
     },
@@ -151,12 +151,12 @@ export default {
       this.lessonData.push($.extend({}, this.lessonToModify))
       this.addLessonVisible = false
       console.log(this.lessonData)
-      // if(updateAdmLesson(this.lessonData)){
-      //   this.$message({
-      //     type: 'success',
-      //     message: '添加成功'
-      //   })
-      // }
+      if(updateAdmLesson(this.lessonData)){
+        this.$message({
+          type: 'success',
+          message: '添加成功'
+        })
+      }
       this.makeModifyEmpty()
     },
     makeModifyEmpty() {
@@ -189,7 +189,7 @@ export default {
           isShared: '否'
         })
         co = 1
-        // this.lessonData = getStuLessonInfo()
+        this.lessonData = getStuLessonInfo()
       }
     },
     //todo
@@ -232,7 +232,7 @@ export default {
           type: 'success',
           message: '删除成功'
         })
-        // updateAdmLesson(this.lessonData)
+        updateAdmLesson(this.lessonData)
       }).catch(() => {
         this.$message({
           type: 'info',

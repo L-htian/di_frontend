@@ -5,16 +5,16 @@ const api = {
 }
 
 export function validate(form) {
-    // let re
-    // $.ajax(`${api.common}/validate`, {
-    //     type: 'POST',
-    //     dataType: 'application/json',
-    //     data:JSON.stringify(form),
-    //     contentType:'text',
-    //     async:false,
-    //     success:function (data){
-    //         re = (JSON.parse(data)).content
-    //     }
-    // })
-    return 1
+    let re
+    $.ajax(`${api.common}/validate`, {
+        type: 'POST',
+        dataType: 'application/json',
+        data:JSON.stringify(form),
+        contentType:'text',
+        async:false,
+        success:function (data){
+            re = (JSON.parse(data)).content
+        }
+    })
+    return re
 }

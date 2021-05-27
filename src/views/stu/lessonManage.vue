@@ -65,12 +65,12 @@ export default {
         "lesson_id": id,
         "student_id": this.stu_id
       }
-      // if(chooseStuLesson(re)){
-      //   this.$notify({
-      //     title:"选课成功",
-      //     type: 'success'
-      //   })
-      // }
+      if(chooseStuLesson(re)){
+        this.$notify({
+          title:"选课成功",
+          type: 'success'
+        })
+      }
     },
     getLessonInfo() {
       for(let i =0;i<10;i++){
@@ -83,7 +83,7 @@ export default {
           isShared: '否'
         })
       }
-      // this.lessonData = getStuLessonInfo()
+      this.lessonData = getStuLessonInfo()
     }
   },
   data() {

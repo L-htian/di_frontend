@@ -47,7 +47,7 @@ export default {
           department: '软件学院',
         })
       }
-      // this.stuData = getStuInfoAdmNeed()
+      this.stuData = getStuInfoAdmNeed()
     }
   },
   data() {

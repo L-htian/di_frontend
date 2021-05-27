@@ -62,7 +62,7 @@ export default {
           chooseCount: 120
         })
       }
-      // this.lessonData = getLessonInfoAdmNeed()
+      this.lessonData = getLessonInfoAdmNeed()
     }
   },
   data(){
