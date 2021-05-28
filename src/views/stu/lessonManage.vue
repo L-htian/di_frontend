@@ -73,16 +73,6 @@ export default {
       }
     },
     getLessonInfo() {
-      for(let i =0;i<10;i++){
-        this.lessonData.push({
-          lesson_id: '12354',
-          lesson_name: '数据集成',
-          lesson_point: '2',
-          teacher: '刘峰',
-          classroom: '教学楼202',
-          isShared: '否'
-        })
-      }
       let re = getStuLessonInfo()
       for (let i = 0; i < re.length; i++) {
         let ss = {}

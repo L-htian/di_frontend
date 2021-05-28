@@ -138,7 +138,7 @@ export default {
           this.lessonData[i].isShared = this.lessonToModify.isShared
         }
       }
-      if(updateAdmLesson(this.lessonData)){
+      if (updateAdmLesson(this.lessonData)) {
         this.$message({
           type: 'success',
           message: '修改成功'
@@ -151,7 +151,7 @@ export default {
       this.lessonData.push($.extend({}, this.lessonToModify))
       this.addLessonVisible = false
       console.log(this.lessonData)
-      if(updateAdmLesson(this.lessonData)){
+      if (updateAdmLesson(this.lessonData)) {
         this.$message({
           type: 'success',
           message: '添加成功'
@@ -168,46 +168,25 @@ export default {
       this.lessonToModify.isShared = ''
     },
     initInfo() {
-      let co = 0
-      if (!co) {
-        for (let i = 0; i < 10; i++) {
-          this.lessonData.push({
-            lesson_id: '12354',
-            lesson_name: '数据集成',
-            lesson_point: '2',
-            teacher: '刘峰',
-            classroom: '教学楼202',
-            isShared: '否'
-          })
+      let re = getLessonInfoAdmNeed()
+      for (let i = 0; i < re.length; i++) {
+        let ss = {}
+        ss.lesson_id = re[i].lesson_id
+        ss.lesson_name = re[i].lesson_name
+        ss.lesson_point = re[i].lesson_point
+        ss.teacher = re[i].teacher
+        ss.classroom = re[i].classroom
+        if (re[i].isShared == 1) {
+          ss.isShared = "是"
+        } else if (re[i].isShared == 0) {
+          ss.isShared = "否"
+        } else {
+          ss.isShared = "其他学院"
         }
-        this.lessonData.push({
-          lesson_id: '12354545',
-          lesson_name: '数据集成',
-          lesson_point: '2',
-          teacher: '刘峰',
-          classroom: '教学楼202',
-          isShared: '否'
-        })
-        co = 1
-        let re = getLessonInfoAdmNeed()
-        for (let i = 0; i < re.length; i++) {
-          let ss = {}
-          ss.lesson_id = re[i].lesson_id
-          ss.lesson_name = re[i].lesson_name
-          ss.lesson_point = re[i].lesson_point
-          ss.teacher = re[i].teacher
-          ss.classroom = re[i].classroom
-          if (re[i].isShared == 1) {
-            ss.isShared = "是"
-          } else if (re[i].isShared == 0) {
-            ss.isShared = "否"
-          } else {
-            ss.isShared = "其他学院"
-          }
-          this.lessonData.push(ss)
-        }
-
+        this.lessonData.push(ss)
       }
+
+
     },
     //todo
     addLesson() {
