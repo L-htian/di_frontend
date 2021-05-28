@@ -107,7 +107,7 @@
 
 <script>
 import {getStuLessonInfo} from "@/api/stu";
-import {getLessonInfoAdmNeed, updateAdmLesson} from "@/api/admin";
+import {deleteAdmLesson, getLessonInfoAdmNeed, updateAdmLesson} from "@/api/admin";
 import $ from 'jquery'
 
 export default {
@@ -138,7 +138,7 @@ export default {
           this.lessonData[i].isShared = this.lessonToModify.isShared
         }
       }
-      if (updateAdmLesson(this.lessonData)) {
+      if (updateAdmLesson(this.lessonToModify)) {
         this.$message({
           type: 'success',
           message: '修改成功'
@@ -151,7 +151,7 @@ export default {
       this.lessonData.push($.extend({}, this.lessonToModify))
       this.addLessonVisible = false
       console.log(this.lessonData)
-      if (updateAdmLesson(this.lessonData)) {
+      if (updateAdmLesson(this.lessonToModify)) {
         this.$message({
           type: 'success',
           message: '添加成功'
@@ -228,7 +228,7 @@ export default {
           type: 'success',
           message: '删除成功'
         })
-        updateAdmLesson(this.lessonData)
+        deleteAdmLesson(id)
       }).catch(() => {
         this.$message({
           type: 'info',

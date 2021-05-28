@@ -78,3 +78,14 @@ export function updateAdmLesson(lessonInfo){
     })
     return re
 }
+
+export function deleteAdmLesson(lessonId){
+    $.ajax(`${api.adm}/deleteAdmLesson/${lessonId}`,{
+        type:'POST',
+        contentType:'application/json',
+        async:false,
+        success:function (data){
+            console.log("deleteSuccess!")
+        }
+    })
+}
