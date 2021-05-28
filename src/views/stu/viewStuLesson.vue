@@ -73,11 +73,27 @@ export default {
           type: 'success',
           message: '退选成功'
         })
-        let re = {
+        let r = {
           "lesson_id":id,
           "student_id":this.stu_id
         }
-        this.lessonData = dropLesson(re)
+        let re = dropLesson(r)
+        for (let i = 0; i < re.length; i++) {
+          let ss = {}
+          ss.lesson_id = re[i].lesson_id
+          ss.lesson_name = re[i].lesson_name
+          ss.lesson_point = re[i].lesson_point
+          ss.teacher = re[i].teacher
+          ss.classroom = re[i].classroom
+          if (re[i].isShared == 1) {
+            ss.isShared = "是"
+          } else if (re[i].isShared == 0) {
+            ss.isShared = "否"
+          } else {
+            ss.isShared = "其他学院"
+          }
+          this.lessonData.push(ss)
+        }
       }).catch(() => {
         this.$message({
           type: 'info',
