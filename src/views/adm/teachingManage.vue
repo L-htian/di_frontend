@@ -189,7 +189,7 @@ export default {
           isShared: '否'
         })
         co = 1
-        let re = getStuLessonInfo()
+        let re = getLessonInfoAdmNeed()
         for (let i = 0; i < re.length; i++) {
           let ss = {}
           ss.lesson_id = re[i].lesson_id
