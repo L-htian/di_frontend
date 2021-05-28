@@ -10,6 +10,7 @@ export function getStuInfo(account) {
         type: 'GET',
         data: {},
         dataType: 'text',
+        contentType:'application/json',
         async: false,
         success: function (data) {
             re = (JSON.parse(data)).content
@@ -23,6 +24,7 @@ export function getStuLessonInfo(){
     $.ajax(`${api.stu}/getLessonInfo`,{
         type:'GET',
         dataType:'text',
+        contentType:'application/json',
         async:false,
         success:function (data){
             re = (JSON.parse(data)).content
@@ -68,6 +70,7 @@ export function getChoosedLesson(stuId){
         type: 'GET',
         data: {},
         dataType: 'text',
+        contentType:'application/json',
         async: false,
         success: function (data) {
             re = (JSON.parse(data)).content
@@ -81,6 +84,7 @@ export function dropLesson(lessonInfo){
     $.ajax(`${api.stu}/dropLesson`, {
         type: "POST",
         data: JSON.stringify(lessonInfo),
+        dataType:'text',
         contentType: 'application/json',
         async: false,
         success: function (data) {

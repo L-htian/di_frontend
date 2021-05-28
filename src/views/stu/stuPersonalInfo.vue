@@ -60,9 +60,9 @@ export default {
         account: '181250000',
         password: '1232456'
       }
-      this.set_stuId(this.student_Info.id)
       console.log(this.login_account)
       this.student_Info = getStuInfo(this.login_account)
+      this.set_stuId(this.student_Info.id)
     },
     changePassword() {
       let re = {

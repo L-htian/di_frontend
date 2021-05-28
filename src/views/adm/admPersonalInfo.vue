@@ -1,12 +1,12 @@
 <template>
   <div class="Info">
     <el-form class="form" :label-position="labelPosition" label-width="80px">
-      <el-form-item label="姓名">
-        <el-input :disabled="true" v-model="admin_Info.name"></el-input>
-      </el-form-item>
-      <el-form-item label="性别">
-        <el-input :disabled="true" v-model="admin_Info.sex"></el-input>
-      </el-form-item>
+<!--      <el-form-item label="姓名">-->
+<!--        <el-input :disabled="true" v-model="admin_Info.name"></el-input>-->
+<!--      </el-form-item>-->
+<!--      <el-form-item label="性别">-->
+<!--        <el-input :disabled="true" v-model="admin_Info.sex"></el-input>-->
+<!--      </el-form-item>-->
       <el-form-item label="账户">
         <el-input :disabled="true" v-model="admin_Info.account"></el-input>
       </el-form-item>
@@ -44,8 +44,8 @@ export default {
   methods: {
     getInfo() {
       this.admin_Info = {
-        name: '刘峰',
-        sex: '男',
+        // name: '刘峰',
+        // sex: '男',
         account: '181250000',
         password: '123456'
       }

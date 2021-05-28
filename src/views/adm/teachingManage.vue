@@ -23,7 +23,7 @@
           width="130">
       </el-table-column>
       <el-table-column
-          prop="teachers"
+          prop="teacher"
           label="授课老师">
       </el-table-column>
       <el-table-column
@@ -56,7 +56,7 @@
           <el-input v-model="lessonToModify.lesson_point" :disabled="false" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="任课老师">
-          <el-input v-model="lessonToModify.teachers" :disabled="false" autocomplete="off"></el-input>
+          <el-input v-model="lessonToModify.teacher" :disabled="false" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="授课地点">
           <el-input v-model="lessonToModify.classroom" :disabled="false" autocomplete="off"></el-input>
@@ -85,7 +85,7 @@
           <el-input v-model="lessonToModify.lesson_point" :disabled="false" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="任课老师">
-          <el-input v-model="lessonToModify.teachers" :disabled="false" autocomplete="off"></el-input>
+          <el-input v-model="lessonToModify.teacher" :disabled="false" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="授课地点">
           <el-input v-model="lessonToModify.classroom" :disabled="false" autocomplete="off"></el-input>
@@ -133,7 +133,7 @@ export default {
           this.lessonData[i].lesson_id = this.lessonToModify.lesson_id
           this.lessonData[i].lesson_name = this.lessonToModify.lesson_name
           this.lessonData[i].lesson_point = this.lessonToModify.lesson_point
-          this.lessonData[i].teachers = this.lessonToModify.teachers
+          this.lessonData[i].teacher = this.lessonToModify.teacher
           this.lessonData[i].classroom = this.lessonToModify.classroom
           this.lessonData[i].isShared = this.lessonToModify.isShared
         }
@@ -163,7 +163,7 @@ export default {
       this.lessonToModify.lesson_id = ''
       this.lessonToModify.lesson_name = ''
       this.lessonToModify.lesson_point = ''
-      this.lessonToModify.teachers = ''
+      this.lessonToModify.teacher = ''
       this.lessonToModify.classroom = ''
       this.lessonToModify.isShared = ''
     },
@@ -175,7 +175,7 @@ export default {
             lesson_id: '12354',
             lesson_name: '数据集成',
             lesson_point: '2',
-            teachers: '刘峰',
+            teacher: '刘峰',
             classroom: '教学楼202',
             isShared: '否'
           })
@@ -184,7 +184,7 @@ export default {
           lesson_id: '12354545',
           lesson_name: '数据集成',
           lesson_point: '2',
-          teachers: '刘峰',
+          teacher: '刘峰',
           classroom: '教学楼202',
           isShared: '否'
         })
@@ -208,7 +208,7 @@ export default {
           this.lessonToModify.lesson_id = this.lessonData[i].lesson_id
           this.lessonToModify.lesson_name = this.lessonData[i].lesson_name
           this.lessonToModify.lesson_point = this.lessonData[i].lesson_point
-          this.lessonToModify.teachers = this.lessonData[i].teachers
+          this.lessonToModify.teacher = this.lessonData[i].teacher
           this.lessonToModify.classroom = this.lessonData[i].classroom
           this.lessonToModify.isShared = this.lessonData[i].isShared
         }
@@ -252,7 +252,7 @@ export default {
         lesson_id: '',
         lesson_name: '',
         lesson_point: '',
-        teachers: '',
+        teacher: '',
         classroom: '',
         isShared: ''
       }

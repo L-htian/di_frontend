@@ -1,7 +1,7 @@
 import $ from 'jquery'
 
 const api = {
-    adm: 'http://localhost:8089/clientA/api/adm'
+    adm: 'http://localhost:8092/clientA/api/adm'
 }
 
 export function getAdmInfo(account) {
@@ -10,6 +10,7 @@ export function getAdmInfo(account) {
         type: 'GET',
         dataType: 'text',
         async: false,
+        contentType:'application/json',
         success: function (data) {
             re = (JSON.parse(data)).content
         }
@@ -22,6 +23,7 @@ export function getStuInfoAdmNeed(){
     $.ajax(`${api.adm}/getStuInfoForAdm`,{
         type:'GET',
         dataType:'text',
+        contentType:'application/json',
         async:false,
         success:function (data){
             re = (JSON.parse(data)).content
@@ -35,6 +37,7 @@ export function getLessonInfoAdmNeed(){
     $.ajax(`${api.adm}/getLessonInfoForAdm`,{
         type:'GET',
         dataType:'text',
+        contentType:'application/json',
         async:false,
         success:function (data){
             re = (JSON.parse(data)).content
