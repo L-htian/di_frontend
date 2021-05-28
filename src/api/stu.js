@@ -1,7 +1,7 @@
 import $ from 'jquery'
 
 const api = {
-    stu: 'http://localhost:8089/clientA/api/stu'
+    stu: 'http://localhost:8092/clientA/api/stu'
 }
 
 export function getStuInfo(account) {
