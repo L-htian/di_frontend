@@ -107,7 +107,7 @@
 
 <script>
 import {getStuLessonInfo} from "@/api/stu";
-import {updateAdmLesson} from "@/api/admin";
+import {getLessonInfoAdmNeed, updateAdmLesson} from "@/api/admin";
 import $ from 'jquery'
 
 export default {
@@ -189,7 +189,25 @@ export default {
           isShared: '否'
         })
         co = 1
-        this.lessonData = getStuLessonInfo()
+        let re = getStuLessonInfo()
+        for (let i = 0; i < re.length; i++) {
+          let ss = {}
+          ss.lesson_id = re[i].lesson_id
+          ss.lesson_name = re[i].lesson_name
+          ss.lesson_point = re[i].lesson_point
+          ss.teacher = re[i].teacher
+          ss.classroom = re[i].classroom
+          ss.chooseCount = re[i].chooseCount
+          if (re[i].isShared == 1) {
+            ss.isShared = "是"
+          } else if (re[i].isShared == 0) {
+            ss.isShared = "否"
+          } else {
+            ss.isShared = "其他学院"
+          }
+          this.lessonData.push(ss)
+        }
+
       }
     },
     //todo
