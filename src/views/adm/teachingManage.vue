@@ -197,7 +197,6 @@ export default {
           ss.lesson_point = re[i].lesson_point
           ss.teacher = re[i].teacher
           ss.classroom = re[i].classroom
-          ss.chooseCount = re[i].chooseCount
           if (re[i].isShared == 1) {
             ss.isShared = "是"
           } else if (re[i].isShared == 0) {
