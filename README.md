@@ -1,4 +1,4 @@
-# di_frontend
+# di_frontend_clientA
 
 ## Project setup
 ```
