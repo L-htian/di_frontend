@@ -8,9 +8,9 @@ export function validate(form) {
     let re
     $.ajax(`${api.common}/validate`, {
         type: 'POST',
-        dataType: 'application/json',
+        dataType: 'text',
         data:JSON.stringify(form),
-        contentType:'text',
+        contentType:'application/json',
         async:false,
         success:function (data){
             re = (JSON.parse(data)).content
